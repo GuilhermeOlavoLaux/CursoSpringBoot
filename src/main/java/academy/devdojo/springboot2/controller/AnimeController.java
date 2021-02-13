@@ -44,6 +44,10 @@ public class AnimeController {
         animeService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    @GetMapping(path = "/find")
+    public ResponseEntity<List<Anime>> findByName (@RequestParam String name){
+        return  ResponseEntity.ok(animeService.findByName(name));
+    }
 
     @PutMapping
     public ResponseEntity<Void> replace(@RequestBody AnimePutRequestBody animePutRequestBody){
