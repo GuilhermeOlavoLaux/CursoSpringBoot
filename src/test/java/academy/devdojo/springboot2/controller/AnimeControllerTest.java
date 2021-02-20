@@ -23,17 +23,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 class AnimeControllerTest {
-    @InjectMocks
+    @InjectMocks // cria um mock para testar a classe AnimeController
     private AnimeController animeController;
-    @Mock
+
+    @Mock // cria um mock para todas as classes que estão sendo utilizadas pelo AnimeService
     private AnimeService animeServiceMock;
 
-    @BeforeEach
-    void setUp(){
+
+    @BeforeEach // realiza este metódo antes de qualquer outro
+    void setUp(){ //cria um anime e o coloca em uma lista dentro de uma Animepage
         PageImpl<Anime> animePage = new PageImpl<>(List.of(AnimeCreator.createValidAnime()));
         BDDMockito.when(animeServiceMock.listAll(ArgumentMatchers.any()))
                 .thenReturn(animePage);
     }
+
     @Test
     @DisplayName("List returns list of anime inside page object when successful")
     void list_ReturnsListOfAnimesInsidePageObject_WhenSuccessful(){
@@ -48,5 +51,8 @@ class AnimeControllerTest {
                 .hasSize(1);
 
         Assertions.assertThat(animePage.toList().get(0).getName()).isEqualTo(expectedName);
+
+        System.out.println(animePage.toList());
+
     }
 }
