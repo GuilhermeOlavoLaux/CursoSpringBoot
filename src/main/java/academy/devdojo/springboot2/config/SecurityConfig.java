@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * DefaultLoginPageGeneratingFilter
      * DefaultLogoutPageGeneratingFilter
      * FilterSecurityInterceptor
-     * Authentication -> Authorization
+     * Authentication -> Authorization.
      *
      * @param http
      * @throws Exception
