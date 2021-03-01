@@ -1,5 +1,6 @@
 package academy.devdojo.springboot2.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

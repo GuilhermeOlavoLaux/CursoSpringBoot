@@ -18,3 +18,13 @@ logging:
       hibernate:
         SQL: DEBUG
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+
+info:
+  app: Course Spring Boot 2 Essentials By DevDojo - Guilherme Laux
+  website: https://devdojo.academy
+  github: https://github.com/GuilhermeOlavoLaux/CursoSpringBoot
